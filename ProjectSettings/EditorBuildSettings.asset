@@ -6,9 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AmpereForce.unity
+    path: Assets/Scenes/Hand-AmpereForce.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: c5eac36ca0f4db44eb6dac524473a4cc, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: dbd8dfad853cd6548a0f4762cc5c7382, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6c14db5312346a24d9ee49fe9c93ed4c, type: 2}

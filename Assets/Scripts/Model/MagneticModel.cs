@@ -1,10 +1,10 @@
 using System;
-using Framework.Core;
+using Framework3.Core;
 using Sirenix.OdinInspector;
 
 namespace AmpereForce
 {
-    using Framework.Core.Model;
+    using Framework3.Core;
     using UnityEngine;
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace AmpereForce
             Magnitude = 1,
         };
 
-        public float I = 1; // 电流值，正负表示方向
+        public float I = 0f; // 电流值，正负表示方向
 
         public float R = 1f; // 电阻值
 

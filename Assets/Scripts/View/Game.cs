@@ -8,7 +8,7 @@
 
 namespace Game
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     public class Game : AbstractArchitecture<Game>
     {

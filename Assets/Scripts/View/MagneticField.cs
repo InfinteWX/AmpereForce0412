@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AmpereForce
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     /// <summary>
     /// 磁场区域

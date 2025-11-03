@@ -15,7 +15,7 @@ using UnityEngine.UI;
 
 namespace AmpereForce
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     /// <summary>
     ///  实验控制UI
@@ -63,7 +63,7 @@ namespace AmpereForce
             BValueGroupInit();
 
             // 注册切换实验事件
-            TypeEventSystem.GLOBAL.Register<ChangeEpTypeEvent>(e =>
+            TypeEventSystem.Global.Register<ChangeEpTypeEvent>(e =>
             {
                 BtnIDir.interactable = e.Type == EpType.AmpereForce;
 
@@ -83,7 +83,7 @@ namespace AmpereForce
         {
             var model = this.GetModel<MagneticModel>();
             model.I *= -1;
-            TypeEventSystem.GLOBAL.Send<ChangeIDirEvent>();
+            TypeEventSystem.Global.Send<ChangeIDirEvent>();
         }
 
         [Button]
@@ -91,7 +91,7 @@ namespace AmpereForce
         {
             var model = this.GetModel<MagneticModel>();
             model.Data.Direction *= -1;
-            TypeEventSystem.GLOBAL.Send<ChangeMagneticDirEvent>();
+            TypeEventSystem.Global.Send<ChangeMagneticDirEvent>();
         }
 
         public void OnBtnModeClick()
@@ -103,14 +103,16 @@ namespace AmpereForce
             if (currentMode == EpMode.Macro)
             {
                 model.EpMode.Value = EpMode.Micro;
-                text.text          = "微观模式";
+                text.text          = "微观模式:开";
             }
             else
             {
                 model.EpMode.Value = EpMode.Macro;
-                text.text          = "宏观模式";
+                text.text          = "微观模式:关";
             }
         }
+        
+             
 
         private void IValueGroupInit()
         {
@@ -154,7 +156,7 @@ namespace AmpereForce
                 });
 
                 // 注册实验类型切换事件
-                TypeEventSystem.GLOBAL.Register<ChangeEpTypeEvent>(e =>
+                TypeEventSystem.Global.Register<ChangeEpTypeEvent>(e =>
                 {
                     // 获取 txt 组件
                     var txt = btn.GetComponentInChildren<TextMeshProUGUI>();
@@ -184,7 +186,7 @@ namespace AmpereForce
                 text.text = "模式：电磁感应";
 
                 // 发送实验切换事件
-                TypeEventSystem.GLOBAL.Send(new ChangeEpTypeEvent(EpType.LorentzForce));
+                TypeEventSystem.Global.Send(new ChangeEpTypeEvent(EpType.LorentzForce));
             }
             // 否则
             else
@@ -195,7 +197,7 @@ namespace AmpereForce
                 text.text = "模式：恒定电流";
 
                 // 发送实验切换事件
-                TypeEventSystem.GLOBAL.Send(new ChangeEpTypeEvent(EpType.AmpereForce));
+                TypeEventSystem.Global.Send(new ChangeEpTypeEvent(EpType.AmpereForce));
             }
         }
 

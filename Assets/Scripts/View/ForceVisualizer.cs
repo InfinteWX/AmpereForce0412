@@ -7,14 +7,14 @@
 // ------------------------------------------------------------
 
 using System;
-using Framework.Toolkits.FluentAPI;
-using Framework.Toolkits.SingletonKit;
+using Framework3.Toolkits.FluentAPI;
+using Framework3.Toolkits.SingletonKit;
 using Shapes;
 using UnityEngine;
 
 namespace AmpereForce
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     public class ForceVisualizer : MonoSingleton<ForceVisualizer>
     {
@@ -26,6 +26,9 @@ namespace AmpereForce
 
         [HierarchyPath("BArrow")]
         public Arrow BArrow;
+        
+        [HierarchyPath("IArrow")]
+        public Arrow IArrow;
 
         public override void OnSingletonInit()
         {
@@ -55,25 +58,42 @@ namespace AmpereForce
 
             // 更新磁场
             UpdateBArrow(model);
+            
+            // 更新电流
+            UpdateIArrow(model);
         }
 
+        private void UpdateIArrow(MagneticModel model)
+        {
+            // 更新I箭头的值向量
+            IArrow.ValueVector = model.I * model.CylinderDir.normalized;
+
+            // 计算I箭头的中间位置
+            var middlePos = -IArrow.LengthVector / 2;
+            // 设置I箭头的位置
+            IArrow.SetLocalPosition(middlePos + Vector3.right*0.05f); // 偏移一点点
+            //实时更新电流文字
+            IArrow.Text.text = $"I: {model.I:F2}A";
+        }
         private void UpdateBArrow(MagneticModel model)
         {
             // 更新B箭头的值向量
-            BArrow.ValueVector = model.Data.B;
+            BArrow.ValueVector = model.Data.B * 0.2f;
 
             // 计算B箭头的中间位置
             var middlePos = -BArrow.LengthVector / 2;
             // 设置B箭头的位置
             BArrow.SetLocalPosition(middlePos);
+            //实时更新磁场文字
+            BArrow.Text.text = $"B: {model.Data.B.magnitude}T";
         }
 
         private void UpdateForceArrow(MagneticModel model)
         {
             // 更新力箭头
             ForceArrow.ValueVector = model.CurrentForce;
-
-            ForceArrow.Text.text = $"F: {model.CurrentForce.magnitude:F2}N"; // 实时更新力文字
+            // 实时更新力文字
+            ForceArrow.Text.text = $"F: {model.CurrentForce.magnitude:F2}N"; 
         }
 
         protected override IArchitecture _Architecture

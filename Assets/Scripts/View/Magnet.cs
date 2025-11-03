@@ -7,12 +7,12 @@
 // ------------------------------------------------------------
 
 using System;
-using Framework.Toolkits.FluentAPI;
+using Framework3.Toolkits.FluentAPI;
 using UnityEngine;
 
 namespace AmpereForce
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     /// <summary>
     /// 注册事件
@@ -30,7 +30,7 @@ namespace AmpereForce
             this.BindHierarchyComponent();
             
             //  注册事件 ChangeMagneticDirEvent
-            TypeEventSystem.GLOBAL.Register<ChangeMagneticDirEvent>(e =>
+            TypeEventSystem.Global.Register<ChangeMagneticDirEvent>(e =>
             {
                 // 翻转箭头
                 var y = MagneticLine.GetLocalScaleY();
@@ -39,7 +39,7 @@ namespace AmpereForce
                 // 翻转马蹄铁
                 y = MagneticModel.GetLocalScaleY();
                 MagneticModel.SetLocalScale(y: -y);
-            }).UnRegisterWhenGameObjectDestroyed(this);
+            }).UnregisterWhenGameObjectDestroyed(this);
         }
 
         protected override IArchitecture _Architecture

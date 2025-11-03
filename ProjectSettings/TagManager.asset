@@ -4,13 +4,32 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - EditorOnly
   - Touchable
   - MagneticField
+  - QDSUIBackplateGradient
+  - QDSUISection
+  - QDSUIIcon
+  - QDSUISharedThemeColor
+  - QDSUIToggleButton
+  - QDSUIToggleCheckboxRadio
+  - QDSUITooltip
+  - QDSUITextSecondaryColor
+  - QDSUIToggleBorderlessButton
+  - QDSUIToggleSwitch
+  - QDSUIAccentColor
+  - QDSUISecondaryButton
+  - QDSUIPrimaryButton
+  - QDSUITextInvertedColor
+  - QDSUITextSecondaryInvertedColor
+  - QDSUIBorderlessButton
+  - QDSUITextInputField
+  - QDSUIDestructiveButton
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Overlay UI
   - Water
   - UI
   - 

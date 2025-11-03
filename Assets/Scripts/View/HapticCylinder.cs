@@ -7,16 +7,16 @@
 // ------------------------------------------------------------
 
 using System;
-using Framework.Toolkits.ActionKit;
-using Framework.Toolkits.EventKit;
-using Framework.Toolkits.FluentAPI;
-using Framework.Toolkits.SingletonKit;
+using Framework3.Toolkits.ActionKit;
+using Framework3.Toolkits.EventKit;
+using Framework3.Toolkits.FluentAPI;
+using Framework3.Toolkits.SingletonKit;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace AmpereForce
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     /// <summary>
     /// Touch 棍子
@@ -46,7 +46,7 @@ namespace AmpereForce
                 var alpha = newValue == EpMode.Macro ? 1 : 0.1f;
                 
                 GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1, alpha);
-            }).UnRegisterWhenGameObjectDestroyed(this);
+            }).UnregisterWhenGameObjectDestroyed(this);
         }
 
         private void Start()

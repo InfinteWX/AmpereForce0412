@@ -7,7 +7,8 @@
 // ------------------------------------------------------------
 
 using System;
-using Framework.Toolkits.FluentAPI;
+using Framework3.Core;
+using Framework3.Toolkits.FluentAPI;
 using Shapes;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -15,7 +16,7 @@ using UnityEngine;
 
 namespace AmpereForce
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     public class Arrow : AbstractView
     {

@@ -1,4 +1,4 @@
-﻿using Framework.Core;
+﻿using Framework3.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,6 +14,12 @@ namespace AmpereForce
         /// 电流表量程
         /// </summary>
         public const float CurrentRange = 0.6f;
+
+        public int a1;
+        public int b2;
+        public int c3;
+        public int d4;
+        public int e5;
 
         /// <summary>
         /// 电流强度

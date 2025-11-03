@@ -7,13 +7,14 @@
 // ------------------------------------------------------------
 
 using System;
-using Framework.Toolkits.AudioKit;
+using Framework3.Toolkits.AudioKit;
 using Sirenix.OdinInspector;
 using TMPro;
+using UnityEngine.UI;
 
 namespace AmpereForce
 {
-    using Framework.Core;
+    using Framework3.Core;
 
     public class BlackBoard : AbstractView
     {
@@ -25,6 +26,9 @@ namespace AmpereForce
         public int CurrentIndex; // 当前索引
 
         public AudioPlayer AudioPlayer; // 音效播放器
+        
+        // [HierarchyPath("EpControl/btnNextPage")]
+        public Button BtnNextPage; //
 
         private void Awake()
         {
@@ -33,7 +37,7 @@ namespace AmpereForce
 
         [Button]
         // 点击按钮时执行
-        public void Next()
+        public void OnNextClick()
         {
             // 当前索引加一
             CurrentIndex++;
@@ -49,7 +53,7 @@ namespace AmpereForce
 
         [Button]
         // 点击按钮时执行的方法
-        public void Prev()
+        public void OnPrevClick()
         {
             // 当前索引减一
             CurrentIndex--;
