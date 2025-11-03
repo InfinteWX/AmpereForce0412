@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace AmpereForce

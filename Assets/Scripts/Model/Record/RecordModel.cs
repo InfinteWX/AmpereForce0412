@@ -9,8 +9,6 @@ namespace AmpereForce
 {
     public class RecordModel : AbstractModel
     {
-        private List<RecordData> _records = new();
-        
         [ShowInInspector]
         private RecordData _currentRecord = new RecordData();
         
