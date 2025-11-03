@@ -7,6 +7,7 @@ namespace AmpereForce
         protected override void Init()
         {
             RegisterModel(new MagneticModel());
+            RegisterModel(new RecordModel());
         }
     }
 }

@@ -25,24 +25,24 @@ namespace AmpereForce
         [HierarchyPath("btnEpType")]
         public Button BtnEpType; // 切换实验类型
 
-        [HierarchyPath("btnMagneticDir")]
+        [HierarchyPath("btnMagneticDir")] 
         public Button BtnMagneticDir; // 翻转磁场方向
 
-        [HierarchyPath("btnMode")]
+        [HierarchyPath("btnMode")] 
         public Button BtnMode; // 切换模式
 
-        [HierarchyPath("btnIDir")]
+        [HierarchyPath("btnIDir")] 
         public Button BtnIDir; // 翻转磁场方向
 
-        [HierarchyPath("I_ValueGroup")]
+        [HierarchyPath("I_ValueGroup")] 
         public HorizontalLayoutGroup IValueGroup;
 
-        [HierarchyPath("B_ValueGroup")]
+        [HierarchyPath("B_ValueGroup")] 
         public HorizontalLayoutGroup BValueGroup;
 
         // I 和 B 的按钮值
-        private List<float> _iValues              = new List<float>() { 0, 0.2f, 0.4f, 0.6f };
-        private List<float> _bValuesInAmpereType  = new List<float>() { 0, 3, 6, 9 };
+        private List<float> _iValues = new List<float>() { 0, 0.2f, 0.4f, 0.6f };
+        private List<float> _bValuesInAmpereType = new List<float>() { 0, 3, 6, 9 };
         private List<float> _bValuesInLorentzType = new List<float>() { 0, 1, 2, 3 };
 
         private void Awake()
@@ -59,6 +59,7 @@ namespace AmpereForce
 
             // 设置电流值
             IValueGroupInit();
+
             // 设置磁场值
             BValueGroupInit();
 
@@ -97,22 +98,35 @@ namespace AmpereForce
         public void OnBtnModeClick()
         {
             var model = this.GetModel<MagneticModel>();
-            var text  = BtnMode.GetComponentInChildren<TextMeshProUGUI>();
+            var text = BtnMode.GetComponentInChildren<TextMeshProUGUI>();
 
             var currentMode = model.EpMode.Value;
             if (currentMode == EpMode.Macro)
             {
                 model.EpMode.Value = EpMode.Micro;
-                text.text          = "微观模式:开";
+                text.text = "微观模式:开";
             }
             else
             {
                 model.EpMode.Value = EpMode.Macro;
-                text.text          = "微观模式:关";
+                text.text = "微观模式:关";
             }
         }
-        
-             
+
+        public void Record(string btnName)
+        {
+            this.GetModel<RecordModel>().BtnClick(btnName);
+        }
+
+        public void StartRecord()
+        {
+            this.GetModel<RecordModel>().StartRecord();
+        }
+
+        public void StopRecord()
+        {
+            this.GetModel<RecordModel>().StopRecord();
+        }
 
         private void IValueGroupInit()
         {
