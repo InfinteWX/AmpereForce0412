@@ -75,7 +75,21 @@ namespace AmpereForce
             txtContent.text = item.Content;
 
             // 停止当前播放的音频
-            AudioPlayer?.Stop();
+            // AudioPlayer?.Stop();
+            // AudioPlayer = null;
+            if (AudioPlayer != null)
+            {
+                try
+                {
+                    AudioPlayer.Stop();
+                }
+                catch (FrameworkException) // 捕获重复释放异常
+                {
+                    // 已在池中，忽略
+                }
+                AudioPlayer = null; // 关键：必须清空引用
+            }
+            
             // 如果配置项中有音频文件，则播放音频
             if (item.AudioClip != null)
             {
