@@ -24,19 +24,19 @@ namespace AmpereForce
         [HierarchyPath("btnEpType")]
         public Button BtnEpType; // 切换实验类型
 
-        [HierarchyPath("btnMagneticDir")] 
+        [HierarchyPath("btnMagneticDir")]
         public Button BtnMagneticDir; // 翻转磁场方向
 
-        [HierarchyPath("btnMode")] 
+        [HierarchyPath("btnMode")]
         public Button BtnMode; // 切换模式
 
-        [HierarchyPath("btnIDir")] 
+        [HierarchyPath("btnIDir")]
         public Button BtnIDir; // 翻转磁场方向
 
-        [HierarchyPath("I_ValueGroup")] 
+        [HierarchyPath("I_ValueGroup")]
         public HorizontalLayoutGroup IValueGroup;
 
-        [HierarchyPath("B_ValueGroup")] 
+        [HierarchyPath("B_ValueGroup")]
         public HorizontalLayoutGroup BValueGroup;
 
         // I 和 B 的按钮值
@@ -62,6 +62,7 @@ namespace AmpereForce
             // 设置磁场值
             BValueGroupInit();
 
+
             // 注册切换实验事件
             TypeEventSystem.Global.Register<ChangeEpTypeEvent>(e =>
             {
@@ -76,6 +77,12 @@ namespace AmpereForce
                     btn.interactable = e.Type == EpType.AmpereForce;
                 }
             });
+        }
+
+        private void OnApplicationQuit()
+        {
+            // 整体实验结束运行后保存文件
+            this.GetModel<RecordModel>().SaveRecord();
         }
 
         [Button]
@@ -112,16 +119,19 @@ namespace AmpereForce
             }
         }
 
+        // 每个button的记录函数
         public void Record(string btnName)
         {
             this.GetModel<RecordModel>().BtnClick(btnName);
         }
 
+        // 点击开始实验，重新开始记录
         public void StartRecord()
         {
             this.GetModel<RecordModel>().StartRecord();
         }
 
+        // 结束实验，将记录存入Sheet
         public void StopRecord()
         {
             this.GetModel<RecordModel>().StopRecord();
