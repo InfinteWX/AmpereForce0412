@@ -29,6 +29,9 @@ namespace AmpereForce
         
         // [HierarchyPath("EpControl/btnNextPage")]
         public Button BtnNextPage; //
+        
+        [PropertyRange(0, 1)]
+        public float Volume = 0.5f;
 
         private void Awake()
         {
@@ -93,7 +96,7 @@ namespace AmpereForce
             // 如果配置项中有音频文件，则播放音频
             if (item.AudioClip != null)
             {
-                AudioPlayer = AudioKit.PlaySound(item.AudioClip);
+                AudioPlayer = AudioKit.PlaySound(item.AudioClip, Volume);
             }
         }
 

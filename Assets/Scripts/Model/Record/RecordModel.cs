@@ -32,8 +32,13 @@ namespace AmpereForce
 
         private readonly ExcelSheet _sheet = new ExcelSheet();
         public string FileName = "Records";
-        public string SheetName = "Records1104";
+        public string SheetName = "Records";
 
+        public string GetTimeStamp()
+        {
+            DateTime time = DateTime.Now;
+            return $"{time.Month}_{time.Day}_{time.Hour}_{time.Minute}_{time.Second}";
+        }  
 
         protected override void OnInit()
         {
@@ -88,7 +93,8 @@ namespace AmpereForce
 
         public void SaveRecord()
         {
-            _sheet.Save(FileName, SheetName);
+            string timeStamp = GetTimeStamp();
+            _sheet.Save(FileName+timeStamp, SheetName);
         }
     }
 }
