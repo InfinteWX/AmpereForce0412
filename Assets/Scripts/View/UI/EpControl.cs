@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace AmpereForce
@@ -207,6 +208,10 @@ namespace AmpereForce
                 model.EpType = EpType.LorentzForce;
                 // 将按钮上的文本改为“模式：电磁感应”
                 text.text = "模式：电磁感应";
+                if (model.Data.Direction != Vector3.down)
+                {
+                    OnBtnMagneticDirClick();
+                }
 
                 // 发送实验切换事件
                 TypeEventSystem.Global.Send(new ChangeEpTypeEvent(EpType.LorentzForce));
