@@ -126,6 +126,11 @@ namespace AmpereForce
             this.GetModel<RecordModel>().BtnClick(btnName);
         }
 
+        public void RecordEmpty()
+        {
+            this.GetModel<RecordModel>().EmptyBtnClick();
+        }
+
         // 点击开始实验，重新开始记录
         public void StartRecord()
         {

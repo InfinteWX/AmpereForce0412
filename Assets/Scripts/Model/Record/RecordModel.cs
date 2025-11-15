@@ -9,8 +9,7 @@ namespace AmpereForce
 {
     public class RecordModel : AbstractModel
     {
-        [ShowInInspector]
-        private RecordData _currentRecord = new RecordData();
+        [ShowInInspector] private RecordData _currentRecord = new RecordData();
 
         private List<string> _btnNames = new()
         {
@@ -38,7 +37,7 @@ namespace AmpereForce
         {
             DateTime time = DateTime.Now;
             return $"{time.Month}_{time.Day}_{time.Hour}_{time.Minute}_{time.Second}";
-        }  
+        }
 
         protected override void OnInit()
         {
@@ -54,6 +53,11 @@ namespace AmpereForce
             _currentRecord.BtnClickCount[btnName]++;
         }
 
+        public void EmptyBtnClick()
+        {
+            _currentRecord.BtnClickCount["Empty"]++;
+        }
+
         public void StartRecord()
         {
             _currentRecord = new RecordData
@@ -65,6 +69,8 @@ namespace AmpereForce
             {
                 _currentRecord.BtnClickCount.Add(btnName, 0);
             }
+
+            _currentRecord.BtnClickCount.Add("Empty", 0);
         }
 
         public void StopRecord()
@@ -77,6 +83,7 @@ namespace AmpereForce
             {
                 _sheet[0, i] = _btnNames[i];
             }
+            _sheet[0, _btnNames.Count] = "Empty";
 
             // 记录
             int row = _sheet.End[0];
@@ -85,8 +92,11 @@ namespace AmpereForce
                 _sheet[row, i] = _currentRecord.BtnClickCount[_btnNames[i]].ToString();
             }
 
+            // 空次数
+            _sheet[row, _btnNames.Count] = _currentRecord.BtnClickCount["Empty"].ToString();
+
             // 时间
-            _sheet[row, 14] = _currentRecord.Duration.ToString();
+            _sheet[row, _btnNames.Count + 1] = _currentRecord.Duration.ToString();
             // Sheet.Save(FileName, SheetName);
             // DataKit.SaveJson($"record_{time.Month}_{time.Day}_{time.Hour}_{time.Minute}_{time.Second}", _currentRecord);
         }
@@ -94,7 +104,7 @@ namespace AmpereForce
         public void SaveRecord()
         {
             string timeStamp = GetTimeStamp();
-            _sheet.Save(FileName+timeStamp, SheetName);
+            _sheet.Save(FileName + timeStamp, SheetName);
         }
     }
 }
