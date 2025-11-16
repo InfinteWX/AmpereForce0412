@@ -97,6 +97,7 @@ namespace AmpereForce
 
             // 时间
             _sheet[row, _btnNames.Count + 1] = _currentRecord.Duration.ToString();
+            _sheet[row, _btnNames.Count + 2] = this.GetTimeStamp();
             // Sheet.Save(FileName, SheetName);
             // DataKit.SaveJson($"record_{time.Month}_{time.Day}_{time.Hour}_{time.Minute}_{time.Second}", _currentRecord);
         }
