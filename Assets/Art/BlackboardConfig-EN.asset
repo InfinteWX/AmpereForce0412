@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c760caae1c143eba2d8c08607e62b70, type: 3}
+  m_Name: BlackboardConfig-EN
+  m_EditorClassIdentifier: 
+  Items:
+  - Id: 0
+    Content: "VR Force Feedback + Electromagnetics"
+    AudioClip: {fileID: 0}
+  - Id: 1
+    Content: "Welcome to the world of electromagnetics. Please put on your headset; keep your left palm facing upward and hold the control lever. In this experiment, the lever will represent a current-carrying conductor. Please pay attention to the force feedback."
+    AudioClip: {fileID: 8300000, guid: 986de353cf54aed458e0151c5fa7837a, type: 3}
+  - Id: 2
+    Content: "Part 1: Explore the Direction of Ampere Force"
+    AudioClip: {fileID: 8300000, guid: db086bc71b48ac7429f7628edd4576d5, type: 3}
+  - Id: 3
+    Content: "Observe the direction of magnetic induction and predict the direction of Ampere force on the conductor under different current directions."
+    AudioClip: {fileID: 8300000, guid: 4fd4b661087e58d4ea2513bce72227e8, type: 3}
+  - Id: 4
+    Content: "Set the current to 0.4A and the magnetic induction to 6T, then feel the direction of Ampere force on the current-carrying conductor."
+    AudioClip: {fileID: 8300000, guid: 02f26b36bcb01ed4c956ead240f287bf, type: 3}
+  - Id: 5
+    Content: "Recall the left-hand rule for Ampere force: let magnetic field lines enter the palm vertically, point the four fingers in the current direction, and verify the direction of Ampere force."
+    AudioClip: {fileID: 8300000, guid: 3fd4a303378695c4aa990292e37c5ad0, type: 3}
+  - Id: 6
+    Content: "Reverse the current direction and the magnetic field direction separately, and feel how the direction of Ampere force changes."
+    AudioClip: {fileID: 8300000, guid: 9ac4644da7a9dcc4191a7e9073bfb082, type: 3}
+  - Id: 7
+    Content: "Part 2: Explore the Magnitude of Ampere Force"
+    AudioClip: {fileID: 8300000, guid: 99357b0e7c0a4854b803b11345de210c, type: 3}
+  - Id: 8
+    Content: "Change the current magnitude and magnetic induction magnitude separately, and feel how the magnitude of Ampere force changes."
+    AudioClip: {fileID: 8300000, guid: 27006fea773c29d42b28950306ef7045, type: 3}
+  - Id: 9
+    Content: "Rotate the current-carrying conductor and feel how the magnitude of Ampere force changes."
+    AudioClip: {fileID: 8300000, guid: a09706837d8756e4fb9ec7919f23fbed, type: 3}
+  - Id: 10
+    Content: "Part 3: Explore the Direction of Lorentz Force"
+    AudioClip: {fileID: 8300000, guid: 98d5d858a45bb1747a0ba89dd0938f06, type: 3}
+  - Id: 11
+    Content: "Click the top-left \"Mode: Constant Current\" button to switch to electromagnetic induction mode."
+    AudioClip: {fileID: 8300000, guid: cec2e4c9c6020a24d82205e0d04bb749, type: 3}
+  - Id: 12
+    Content: "Set the magnetic field to 3T, then move the conductor rod to cut across magnetic field lines vertically and feel the force on the rod."
+    AudioClip: {fileID: 8300000, guid: 86ff8ab6a02a52548b6f33f5ae7fe8a6, type: 3}
+  - Id: 13
+    Content: "Turn on Microscopic Mode and observe the movement direction of negative charges."
+    AudioClip: {fileID: 8300000, guid: dbc8da1582bb5d84d8836698be345a79, type: 3}
+  - Id: 14
+    Content: "Recall the left-hand rule for Lorentz force: let magnetic field lines enter the palm vertically, point the four fingers opposite to the motion of negative charges, and verify the direction of Lorentz force."
+    AudioClip: {fileID: 8300000, guid: 321c0f9ec022214428aedf39683ab9ba, type: 3}
+  - Id: 15
+    Content: "The experiment is complete. Please remove the headset and hand it to the next student."
+    AudioClip: {fileID: 8300000, guid: 248f27b7f2012a247935e4fd307eb7b4, type: 3}
