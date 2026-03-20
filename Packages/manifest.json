@@ -22,6 +22,7 @@
     "com.unity.xr.management": "4.5.4",
     "com.unity.xr.openxr": "1.16.1",
     "com.zheliku.framework3": "https://github.com/zheliku/Framework3.git",
+    "com.zheliku.unityplugins": "https://github.com/zheliku/UnityPlugins.git",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",

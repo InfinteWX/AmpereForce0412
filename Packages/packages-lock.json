@@ -419,6 +419,13 @@
       },
       "hash": "6d1348c1c84efb0a83075402fa38db610e249619"
     },
+    "com.zheliku.unityplugins": {
+      "version": "https://github.com/zheliku/UnityPlugins.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b6c5ae1b6981d5c577a5d1c001d6aab9da38d533"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
